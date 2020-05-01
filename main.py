@@ -7,12 +7,10 @@ import datetime
 import functools
 import jwt
 
-# pylint: disable=import-error
+
 from flask import Flask, jsonify, request, abort
 
-# app.config.from_pyfile('./config/debug_environment.cfg')
-
-JWT_SECRET = os.environ.get('JWT_SECRET')
+JWT_SECRET = os.environ.get('JWT_SECRET', 'abc123abc1234')
 LOG_LEVEL = os.environ.get('LOG_LEVEL', 'INFO')
 
 
