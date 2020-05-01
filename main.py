@@ -12,12 +12,8 @@ from flask import Flask, jsonify, request, abort
 
 # app.config.from_pyfile('./config/debug_environment.cfg')
 
-
-
-# JWT_SECRET = os.environ.get('JWT_SECRET', 'abc123abc1234')
-# LOG_LEVEL = os.environ.get('LOG_LEVEL', 'INFO')
-
-
+JWT_SECRET = os.environ.get('JWT_SECRET', 'abc123abc1234')
+LOG_LEVEL = os.environ.get('LOG_LEVEL', 'INFO')
 
 def _logger():
     '''
@@ -40,8 +36,7 @@ def _logger():
 APP = Flask(__name__)
 
 # Set configs from Congig-file
-JWT_SECRET = os.environ.get('JWT_SECRET', 'abc123abc1234')
-LOG_LEVEL = os.environ.get('LOG_LEVEL', 'INFO')
+
 LOG = _logger()
 LOG.debug("Starting with log level: %s" % LOG_LEVEL )
 
