@@ -19,7 +19,7 @@ phases:
         - export KUBECONFIG=$HOME/.kube/config
   build:
     commands:
-      - docker build --tag $REPOSITORY_URI:$TAG .
+      - docker build --tag SimpleAPI .
 
   post_build:
     commands:
