@@ -40,9 +40,8 @@ def _logger():
 APP = Flask(__name__)
 
 # Set configs from Congig-file
-APP.config.from_pyfile('./env/config.cfg')
-JWT_SECRET = APP.config['SECRET_KEY']
-LOG_LEVEL = APP.config['LOG_LEVEL']
+JWT_SECRET = os.environ.get('JWT_SECRET', 'abc123abc1234')
+LOG_LEVEL = os.environ.get('LOG_LEVEL', 'INFO')
 LOG = _logger()
 LOG.debug("Starting with log level: %s" % LOG_LEVEL )
 
